@@ -11,6 +11,5 @@
 ```
 
 2. 远程调用
-```sh
-    vue create --preset sexyHuang/my-vue-preset my-project
+`  vue create --preset sexyHuang/my-vue-preset my-project
 ```

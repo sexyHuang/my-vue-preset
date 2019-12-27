@@ -2,7 +2,7 @@
  * @Author: Sexy
  * @Date: 2019-12-27 15:53:01
  * @LastEditors  : Sexy
- * @LastEditTime : 2019-12-27 15:55:04
+ * @LastEditTime : 2019-12-27 16:05:46
  * @Description: file content
  */
 module.exports = (api, options, rootOptions) => {
@@ -36,7 +36,9 @@ module.exports = (api, options, rootOptions) => {
       "cross-env": "^5.2.0",
       "postcss-px-to-viewport": "^1.1.0",
       "standard-version": "^7.0.1",
-      "cz-conventional-changelog": "^3.0.2"
+      "cz-conventional-changelog": "^3.0.2",
+      "husky": "^3.1.0",
+      "validate-commit-msg": "^2.14.0"
     },
     config: {
       commitizen: {
