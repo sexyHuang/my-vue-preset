@@ -2,11 +2,13 @@
  * @Author: Sexy
  * @Date: 2019-12-27 15:53:01
  * @LastEditors  : Sexy
- * @LastEditTime : 2019-12-27 16:05:46
+ * @LastEditTime : 2019-12-30 15:14:02
  * @Description: file content
  */
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
+
+  console.log(options);
   api.extendPackage({
     publishPath: {
       test: {
@@ -37,7 +39,7 @@ module.exports = (api, options, rootOptions) => {
       "postcss-px-to-viewport": "^1.1.0",
       "standard-version": "^7.0.1",
       "cz-conventional-changelog": "^3.0.2",
-      "husky": "^3.1.0",
+      husky: "^3.1.0",
       "validate-commit-msg": "^2.14.0"
     },
     config: {
@@ -47,5 +49,18 @@ module.exports = (api, options, rootOptions) => {
     }
   });
   // 复制并用 ejs 渲染 `./template` 内所有的文件
-  api.render("./template");
+  api.render("./../template/default");
+  if (options.vant) {
+    require("./vant")(api);
+  }
+
+  // for v3 compatibility
+  /*  if (options.features.includes('router') && !api.hasPlugin("router")) {
+    require("./router")(api, options);
+  }
+
+  // for v3 compatibility
+  if (options.features.includes('vuex') && !api.hasPlugin("vuex")) {
+    require("./vuex")(api);
+  } */
 };
