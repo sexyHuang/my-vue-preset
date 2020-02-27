@@ -1,7 +1,5 @@
 import methods from './methods';
 
-methods;
-
 /**
  * 登录
  */
