@@ -10,6 +10,11 @@ module.exports = [
     name:"vant",
     type: "confirm",
     message: "是否引入VantUi插件？"
+  },
+  {
+    name: "api",
+    type: "confirm",
+    message: "是否引入api模块？"
   }
   /* {
     name: "features",

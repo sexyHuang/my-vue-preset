@@ -1,1 +1,3 @@
 VUE_APP_BASEWIDTH = 750
+VUE_APP_CDN=false
+VUE_APP_ENV=development

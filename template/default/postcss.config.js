@@ -3,8 +3,9 @@ module.exports = () => {
   return {
     plugins: {
       autoprefixer: {},
-      "postcss-px-to-viewport": {
-        viewportWidth: vp
+      'postcss-px-to-viewport': {
+        viewportWidth: vp,
+        mediaQuery: true
       }
     }
   };
