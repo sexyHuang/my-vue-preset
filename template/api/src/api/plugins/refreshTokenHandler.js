@@ -16,7 +16,7 @@ const setToken = tokenObj => {
 };
 
 const addToken = async ({ refreshToken }, config) => {
-  config.url = config.url.replace(config.baseURL + '/', '');
+  config.url = config.url.replace(new RegExp(`^${config.baseURL}/`), '');
   const _injectTokenObj = injectTokenObj.bind(null, config);
   if (isRefreshing)
     return new Promise(resolve => {
