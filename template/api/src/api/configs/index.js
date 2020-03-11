@@ -7,8 +7,8 @@
  */
 const DOMAIN = {
   development: '',
-  prelease: 'https://api.h5no1.com/',
-  production: 'https://api.h5no1.com'
+  prelease: '',
+  production: ''
 }[process.env.VUE_APP_ENV];
 const PROJECT_PATH = require('./../../../package.json').name.replace('-h5', '');
 export const API_BASE_URL = `${DOMAIN}/${PROJECT_PATH}/api`;

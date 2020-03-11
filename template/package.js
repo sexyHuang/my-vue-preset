@@ -33,7 +33,8 @@ module.exports = {
     'cz-conventional-changelog': '^3.0.2',
     husky: '^3.1.0',
     'validate-commit-msg': '^2.14.0',
-    '@babel/plugin-proposal-optional-chaining': '^7.8.3'
+    '@babel/plugin-proposal-optional-chaining': '^7.8.3',
+    'image-webpack-loader': '^6.0.0'
   },
   config: {
     commitizen: {

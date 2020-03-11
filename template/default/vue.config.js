@@ -1,5 +1,5 @@
 const PROJECT_NAME = require('./package.json').name;
-const CDN_HOST = 'https://cdn2.h5no1.com/';
+const CDN_HOST = './';
 const cdnBaseUrl = `${CDN_HOST}${PROJECT_NAME}/`;
 
 module.exports = {
@@ -7,11 +7,31 @@ module.exports = {
   parallel: require('os').cpus().length > 1,
   productionSourceMap: false,
   devServer: {
-    proxy: 'https://api.h5no1.com/'
+    proxy: ''
   },
   configureWebpack: config => {
     if (process.env.VUE_APP_ENV === 'production') {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
+      config.module
+        .rule('images')
+        .use('image-webpack-loader')
+        .loader(require.resolve('image-webpack-loader'))
+        .options({
+          mozjpeg: {
+            progressive: true,
+            quality: 65
+          },
+          gifsicle: {
+            interlaced: false
+          },
+          optipng: {
+            enabled: false
+          },
+          pngquant: {
+            quality: [0.65, 0.9],
+            speed: 4
+          }
+        });
     }
   }
 };
