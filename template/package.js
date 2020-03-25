@@ -11,9 +11,11 @@ module.exports = {
     }
   },
   scripts: {
-    dep: 'vue-cli-service build --mode prelease && charon publish test',
-    'cdn-build': 'cross-env VUE_APP_CDN=true vue-cli-service build',
-    'cdn-dep': 'npm run cdn-build && charon publish prod',
+    'prelease-build': 'vue-cli-service build --mode prelease',
+    dep: 'node ./check && yarn prelease-build && charon publish test',
+    'temp-dep': 'yarn prelease-build && charon publish temp',
+    'cdn-build': 'vue-cli-service build',
+    'cdn-dep': 'yarn cdn-build && charon publish prod',
     commitmsg: 'validate-commit-msg',
     'release-f': 'standard-version -f',
     'release-major': 'standard-version -r major',
@@ -34,7 +36,8 @@ module.exports = {
     husky: '^3.1.0',
     'validate-commit-msg': '^2.14.0',
     '@babel/plugin-proposal-optional-chaining': '^7.8.3',
-    'image-webpack-loader': '^6.0.0'
+    'image-webpack-loader': '^6.0.0',
+    shelljs: '^0.8.3'
   },
   config: {
     commitizen: {

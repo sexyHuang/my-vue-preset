@@ -7,6 +7,10 @@ module.exports = {
   parallel: require('os').cpus().length > 1,
   productionSourceMap: false,
   devServer: {
+    open: true,
+    hot: true,
+    quiet: true,
+    openPage: '?mock=1',
     proxy: ''
   },
   configureWebpack: config => {

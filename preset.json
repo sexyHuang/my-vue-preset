@@ -10,5 +10,5 @@
   "router": true,
   "routerHistoryMode": false,
   "vuex": true,
-  "cssPreprocessor": "dart-sass"
+  "cssPreprocessor": "stylus"
 }
