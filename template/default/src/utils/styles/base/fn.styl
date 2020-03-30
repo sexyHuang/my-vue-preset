@@ -1,0 +1,21 @@
+getPath(p) {
+  for list in $alias {
+    if (!!match(list[0] + '/', p)) {
+      return pathjoin(list[1], replace(list[0], '', p));
+    }
+  }
+
+  return p;
+}
+
+imgSize(img) {
+  width: image-size(img)[0] px;
+  height: image-size(img)[1] px;
+}
+
+autoBg(path) {
+  @extend $bg;
+  bg = getPath(path);
+  imgSize(bg);
+  background-image: url(bg);
+}

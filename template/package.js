@@ -37,7 +37,9 @@ module.exports = {
     'validate-commit-msg': '^2.14.0',
     '@babel/plugin-proposal-optional-chaining': '^7.8.3',
     'image-webpack-loader': '^6.0.0',
-    shelljs: '^0.8.3'
+    shelljs: '^0.8.3',
+    'vue-cli-plugin-style-resources-loader': '^0.1.4',
+    'style-resources-loader': '^1.3.3'
   },
   config: {
     commitizen: {
